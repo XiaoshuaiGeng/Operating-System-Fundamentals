@@ -17,11 +17,11 @@
     <ul><li>mode: r for reading, w for writing</li></ul>
   <li>void fclose(FILE *fp)</li>
   <li>void fprintf(FILE* fp, const char* s, …);</li>
-  <li>works like the printf(...) implemented in xv6, plus the buffering</li>
+  <ul><li>works like the printf(...) implemented in xv6, plus the buffering</li></ul>
   <li>void myprintf(const char* s, …)</li>
-  <li>works like your fprintf(...) except that stdout can be omitted</li>
+  <ul><li>works like your fprintf(...) except that stdout can be omitted</li></ul>
 <li>FILE *mystdout should be implicitly opened</li>
 You can assume that the user programs always explicitly close all open streams upon termination.
-Not allowed to modify any existing xv6 source file except for Makefile.
-Submission: stdio.h, stdio.c, userprog.c, Makefile
+<br>Not allowed to modify any existing xv6 source file except for Makefile.
+<br>Submission: stdio.h, stdio.c, userprog.c, Makefile
 </p>
