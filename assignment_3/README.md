@@ -11,7 +11,7 @@
 </pre>
 
 <p>
-  <ul><h3>Notes about this assignment:<h3>
+  <ul><h3>Notes about this assignment:</h3>
   <li>BUFF_SIZE should be defined</li>
   <li>FILE *fopen(const char *path, char mode)</li>
     <ul><li>mode: r for reading, w for writing</li></ul>
