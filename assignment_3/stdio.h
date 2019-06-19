@@ -5,7 +5,7 @@
 
 typedef struct {
 	int fd;	//file descriptor
-	int *ptr //file cursor
+	int pos; //file cursor
 	char buf[BUFF_SIZE];	//file buffer
 }FILE;
 
