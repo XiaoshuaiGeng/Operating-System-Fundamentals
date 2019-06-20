@@ -164,6 +164,11 @@ main(void)
         printf(2, "cannot cd %s\n", buf+3);
       continue;
     }
+    if(buf[0] == 'w' && buf[1]=='h' &&buf[2]=='o'&&buf[3]=='a'&&buf[4]=='m'&&buf[5]=='i'){
+        buf[strlen(buf)-1] = 0;  // chop \n	
+	printf(1,"geng115\n");
+	continue;
+    }
     if(fork1() == 0)
       runcmd(parsecmd(buf));
     wait();
