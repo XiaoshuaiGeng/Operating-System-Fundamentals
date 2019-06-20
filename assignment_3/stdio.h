@@ -5,7 +5,7 @@
 
 typedef struct {
 	int fd;	//file descriptor
-	int position //(file cursor) indicating the current file cursor position
+	int pos //(file cursor) indicating the current file cursor position
 	char buf[BUFF_SIZE];	//file buffer
 	int buf_pos;//indicating the current buffer position
 }FILE;
@@ -29,7 +29,7 @@ FILE* fopen(const char* filepath, const char mode);
 void fclose(FILE *fp);
 
 
-void fprintf(FILE *fp, char *format);
+void fprintf(FILE *fp, char *format,...);
 /*	if(fp not exist){
 		return -1;
 	}
@@ -43,5 +43,5 @@ void fprintf(FILE *fp, char *format);
 	return strlen(format);
 */
 
-void myprintf(const char* s);
+void myprintf(const char* s,...);
 
