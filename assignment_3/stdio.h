@@ -1,6 +1,6 @@
 #ifndef STDIO_H
 #define STDIO_H
-#include "string.h"
+
 #define BUFF_SIZE 128
 
 typedef struct {
@@ -18,13 +18,16 @@ typedef struct {
 //open mode is given by char* mode
 FILE* fopen(const char* filepath, const char mode);
 /*
+
 	File *tmp;
 	tmp->position = 0;
 	tmp->fd = open(...)
 	return tmp;
+
 */
 
 void fclose(FILE *fp);
+
 
 void fprintf(FILE *fp, char *format);
 /*	if(fp not exist){
