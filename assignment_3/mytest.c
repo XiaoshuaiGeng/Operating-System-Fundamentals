@@ -5,12 +5,11 @@
 #include "fcntl.h"
 int main(){
 	FILE *fp = fopen("alpha.txt",'w');
-	fprintf(fp,"this is a test");
-	//int fd = open("alpha",O_CREATE | O_WRONLY);
-	//write(fd,"this\n",5);
-//	write(1,"this\n",5);
+	fprintf(fp,"This output is print by fprintf\n");
+	//int fd = open("alpha.txt",O_RDWR | O_CREATE | O_WRONLY);
+	//This open is for testing only
 	//close(fd);
-	myprintf("goes in");
+	myprintf("This output is print by myprintf\n");
         flush();
 	fclose(fp);
 	exit();

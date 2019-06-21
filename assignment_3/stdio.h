@@ -1,7 +1,7 @@
 #ifndef STDIO_H
 #define STDIO_H
 
-#define BUFF_SIZE 3
+#define BUFF_SIZE 128
 
 typedef struct {
 	int fd;	//file descriptor

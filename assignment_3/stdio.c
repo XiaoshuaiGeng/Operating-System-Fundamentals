@@ -5,15 +5,16 @@
 #include "fcntl.h"
 
 FILE* stdout;
-int stdout_isopen=0;
+static int stdout_isopen=0;
 
 void initstdio()
 {
 	if(!stdout_isopen)
 	{
 		stdout=(FILE*)malloc(sizeof(FILE));
-	        stdout_isopen = 1;	
-	}	
+		stdout->fd = 1;
+	        stdout_isopen = 1;
+	}
 }
 
 
@@ -21,8 +22,8 @@ FILE* fopen(const char* filepath,const char mode){
 	FILE *tmp = (FILE*)malloc(sizeof(FILE));
 	tmp->pos = 0;	//initialize file cursor
 	tmp->buf_pos = 0;	//initialize buffer cursor
-	//memset(tmp->buf,0,128);	//initialize all the elements in 
-//buffer to null
+	//memset(tmp->buf,0,128);
+	//initialize all the elements in buffer to null
 	if(mode =='r')
 		tmp->fd = open(filepath,O_RDONLY);
 	if(mode == 'w')
@@ -34,14 +35,15 @@ void fclose(FILE *fp){
 	write(fp->fd,fp->buf,fp->buf_pos);	//flush the buffer to ven file descriptor
 	//write(1,fp->buf,BUFF_SIZE);
 	close(fp->fd);	//close the file descriptor
-	//free(fp);	//free the raw disk space that the FILE element allocated
+	free(fp);	//free the raw disk space that the FILE element allocated
 }
-void flush()
-{
-		write(stdout->fd,stdout->buf,stdout->buf_pos);// write the buffer to file
-		memset(stdout->buf,0,BUFF_SIZE);	//reinitialize the buffer
-		stdout->buf_pos = 0;
-  
+
+//clear the FILE buffer and output to STDOUT
+void flush(){
+	write(stdout->fd,stdout->buf,stdout->buf_pos);// write the buffer to file
+	memset(stdout->buf,0,BUFF_SIZE);	//reinitialize the buffer
+	stdout->buf_pos = 0;
+
 }
 //put one character into buffer
 static void putc1(FILE* fp, char c){
@@ -53,6 +55,8 @@ static void putc1(FILE* fp, char c){
 	fp->buf[fp->buf_pos++] = c;
 }
 
+
+//print the integer in ASCII format
 static void printint(FILE* fp, int xx, int base, int sgn){
 	static char digits[] = "0123456789ABCDEF";
 	char buf[16];
@@ -78,6 +82,7 @@ static void printint(FILE* fp, int xx, int base, int sgn){
     		putc1(fp, buf[i]);
 }
 
+//print the output to given stream
 void fprintf(FILE* fp, const char* fmt, ...){
 	char *s;
   	int c, i, state;
@@ -123,6 +128,8 @@ void fprintf(FILE* fp, const char* fmt, ...){
     		}
   	}
 }
+
+//print the received input to STDOUT
 void myprintf(const char* fmt, ...){
 
    initstdio();
@@ -169,7 +176,7 @@ void myprintf(const char* fmt, ...){
       			state = 0;
     		}
   	}
- 
+
 
 }
 
