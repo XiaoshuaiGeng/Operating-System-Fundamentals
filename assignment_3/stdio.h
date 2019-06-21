@@ -1,7 +1,7 @@
 #ifndef STDIO_H
 #define STDIO_H
 
-#define BUFF_SIZE 128
+#define BUFF_SIZE 3
 
 typedef struct {
 	int fd;	//file descriptor
@@ -25,7 +25,7 @@ FILE* fopen(const char* filepath, const char mode);
 */
 
 void fclose(FILE *fp);
-
+void flush();
 void fprintf(FILE *fp, const char *s, ...);
 /*	if(fp not exist){
 		return -1;
