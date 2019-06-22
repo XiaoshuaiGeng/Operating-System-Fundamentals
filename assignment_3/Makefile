@@ -175,7 +175,7 @@ UPROGS=\
 	_ln\
 	_ls\
 	_mkdir\
-	_mytest\
+	_userprog\
 	_rm\
 	_sh\
 	_stressfs\
