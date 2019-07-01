@@ -10,7 +10,7 @@
   <li>no penalty for no use or improper use of locks</li>
 </ul>
 <pre>
-To add a system call that can be called in xv6's shell, you should so something with the five files
+To add a system call that can be called in xv6's shell, you should do something with the five files
 
   <b>sysproc.c</b> add the real implementation of your method here
   <b>syscall.h</b> define the position of the system call vector that connect to your implementation
