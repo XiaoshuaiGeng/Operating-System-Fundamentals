@@ -20,4 +20,5 @@ To add a system call that can be called in xv6's shell, you should do something 
   <b>usys.S</b> use the macro to define connect the call of user to the system call function
   <b>defs.h</b> add a forward declaration for your new system call
   <b>sysfunc.h</b> add the new system call handler into this file too like "int sys_newsystemcall(void)"
+  <b>proc.c</b>actual ps() implementation goes here
 </pre>
