@@ -6,6 +6,6 @@
   <li>use (init) for the parent name of the init process</li>
   <li>for total number of processes, count only those in SLEEPING, RUNNING, and RUNNABLE states</li>
   <li>cpu info. should be either idle or the name of the current process</li>
-  <li>penulty for unnecessary modification or addition to xv6</li>
+  <li>penalty for unnecessary modification or addition to xv6</li>
   <li>no penalty for no use or improper use of locks</li>
 </ul>
