@@ -576,7 +576,16 @@ int ps(void){
 		}
 
 	}
-	cprintf("total: %d",num_count);
+	cprintf("total: %d\n",num_count);
+//	struct cpu *c;
+	for(int i = 0; i < ncpu; i++){
+		cprintf("CPU %d: ",cpus[i].apicid);
+		if(cpus[i].proc->state != RUNNING){
+			cprintf("idle\n");
+		}else{
+			cprintf("%s\n",cpus[i].proc->name);
+		}
+	}
 	release(&ptable.lock);
 	return 0;
 }
