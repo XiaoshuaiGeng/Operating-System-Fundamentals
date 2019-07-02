@@ -1,6 +1,6 @@
 # Assignment 4
 <h3>Notes abount this assignment: </h3>
-<h4>TODO: cpu num and running process</h4>
+<h4>TODO: cpu num and running process(Done,debug needed)</h4>
 <ul>
   <li>consider only those processes in SLEEPING, RUNNING, or RUNNABLE state</li>
   <li>process info. includes process id, process name, process state, and parent name</li>
