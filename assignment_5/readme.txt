@@ -1,4 +1,3 @@
-Xiaoshuai Geng 104845608
 
 1. How to set priority?
 	- setprior [pid] [priority] to set the process priority
