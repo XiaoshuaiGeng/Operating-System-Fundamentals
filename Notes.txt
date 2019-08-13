@@ -1,0 +1,65 @@
+make 
+enter OS: make qemu-nox
+Quit OS: Ctrl-a x
+
+textbook: OPERATING SYSTEM CONCEPTS
+
+Chapter 1: 1.1, 1.2, 1.3.1, 1.3.2, 1.4, 1.5
+
+Chapter 2: 2.2.1, 2.3, 2.4, 2.5, 2.8.1, 2.8.2, 2.8.3, 2.9.2
+
+Chapter 3: 3.1, 3.2, 3.4, 3.5, 3.6
+
+Chapter 4: 4.1, 4.2
+
+Chapter 5: 5.1, 5.2, 5.3, 5.6.1, 5.6.2, 5.6.3, 5.6.4
+
+Chapter 6: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.8.1
+
+Chapter 7: 7.1
+
+Chapter 9: 9.1, 9.2, 9.3, 9.4.1, 9.4.2, 9.5, 9.6
+
+Chapter 10: 10.1, 10.2
+
+Chapter 11: 11.1, 11.2, 11.3
+
+Chapter 12: 12.1, 12.2, 12.3.1, 12.3.4, 12.3.5, 12.4.1, 12.4.6, 12.4.7, 12.5
+
+Chapter 13
+
+Chapter 14: 14.1, 14.2, 14.3, 14.4, 14.5.1, 14.5.2
+
+
+
+xv6 BOOK
+
+Chapter 0, Chapter 1 (till page 22), Chapter 3 (till page 46), Chapter 4, Chapter 5 (till page 70), Chapter 6 (except for logging layer)
+
+xv6 files and functions
+
+echo.c  sh.c  cat.c  printf.c  init.c  usys.S  trapasm.S  syscall.h  syscall.c  user.h  sysproc.c
+
+trap(struct trapframe *)
+
+mycpu()   myproc()   scheduler()   sched()   yield()   sleep(.)  wakeup(.)   wakeup1(.)
+
+spinlock.h  spinlock.c  sleeplock.h   sleeplock.c
+
+xv6 data structures
+
+struct proc     struct context     ptable     struct cpu     cpus     struct spinlock     struct sleeplock
+
+ 
+
+CHECKING SYSTEM CALLS (May 22)
+
+Sample print statement:
+
+cprintf(“system call %d (pid: %d, pname: %s)\n”, num, curproc->pid, curproc->name);
+
+Place to insert: between 3708 and 3709 (line numbers refer to PDF file of source code)
+
+For system call id, check syscall.h
+
+Files involved in tracing: init.c, sh.c, printf.c
