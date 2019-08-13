@@ -1,5 +1,7 @@
+Xiaoshuai Geng 104845608
 
 1. How to set priority?
+	- range of priority 0-20
 	- setprior [pid] [priority] to set the process priority
 	- e.g. setprior 2 5 means to set the process with pid 2's priority to 5 
 
